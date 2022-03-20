@@ -9,7 +9,8 @@ files_with_index = pickle.load(open('files_with_index.dat','rb'))
 
 
 with open(sys.argv[1], 'r', encoding = 'utf8') as f:
-    query_g = f.readlines()
+#     query_g = f.readlines()
+    query_g = [line.rstrip() for line in f]
     query = [query_g[i][4:] for i in range(len(query_g))]
 
 #generating an output file for the system, to store the results in the format of QRels
